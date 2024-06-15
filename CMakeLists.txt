@@ -55,6 +55,9 @@ if (APPLE)
     target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
 endif()
 
+# ========================================= IDE env variables ========================================== #
+set(CMAKE_XCODE_SCHEME_ENVIRONMENT OS_ACTIVITY_MODE=disable)
+
 # ============================================= Warnings =============================================== #
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
    add_compile_options(-fdiagnostics-color=always)
