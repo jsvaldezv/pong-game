@@ -14,7 +14,7 @@ void Ball::prepare()
 
 void Ball::draw()
 {
-    DrawCircle (properties.x, properties.y, properties.radius, WHITE);
+    DrawCircle (properties.x, properties.y, properties.radius, Colours::Yellow);
 }
 
 void Ball::update()

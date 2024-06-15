@@ -9,7 +9,7 @@ void Paddle::prepare()
 
 void Paddle::draw()
 {
-    DrawRectangle (properties.x, properties.y, properties.width, properties.height, WHITE);
+    DrawRectangleRounded (Rectangle { getX(), getY(), getWidth(), getHeight() }, 0.8, 0, WHITE);
 }
 
 void Paddle::update()
