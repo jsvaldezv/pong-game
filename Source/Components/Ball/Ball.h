@@ -5,7 +5,7 @@ class Ball
 {
 public:
     
-    explicit Ball() = default;
+    explicit Ball (int& ps, int& cpus);
     ~Ball() = default;
     
     struct Properties
@@ -25,6 +25,8 @@ public:
     
     void update();
     
+    void resetBall();
+    
     void setRadius (int inRadius);
     
     void setSpeed (int inSpeedX, int inSpeedY);
@@ -40,6 +42,9 @@ public:
     float getRadius();
     
 private:
+    
+    int& PlayerScore;
+    int& CPUScore;
     
     Properties properties;
         

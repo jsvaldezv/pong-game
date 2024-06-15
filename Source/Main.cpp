@@ -7,7 +7,10 @@
 const int WIDTH = 1280;
 const int HEIGHT = 800;
 
-Ball ball;
+int PlayerScore = 0;
+int CPUScore = 0;
+
+Ball ball { PlayerScore, CPUScore };
 Paddle player;
 CPUPaddle cpu;
 
@@ -51,6 +54,9 @@ void draw()
     ball.draw();
     cpu.draw();
     player.draw();
+    
+    DrawText (TextFormat ("%i", CPUScore), WIDTH/4 - 20, 20, 80, WHITE);
+    DrawText (TextFormat ("%i", PlayerScore), 3 * WIDTH/4 - 20, 20, 80, WHITE);
 }
 
 int main()
