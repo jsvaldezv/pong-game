@@ -19,6 +19,8 @@ public:
         int radius;
     };
     
+    void prepare();
+    
     void draw();
     
     void update();
@@ -27,9 +29,15 @@ public:
     
     void setSpeed (int inSpeedX, int inSpeedY);
     
+    void setSpeedCollision();
+    
     void setPosition (float inX, float inY);
     
+    float getX();
+    
     float getY();
+    
+    float getRadius();
     
 private:
     

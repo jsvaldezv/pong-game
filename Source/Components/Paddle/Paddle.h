@@ -19,6 +19,8 @@ public:
         int speed;
     };
     
+    void prepare();
+    
     void draw();
     
     void update();
@@ -35,11 +37,13 @@ public:
     
     float getHeight();
     
+    float getX();
+    
     float getY();
     
-    float getSpeed();
-    
 protected:
+    
+    float getSpeed();
     
     void limitMovement();
     

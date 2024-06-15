@@ -9,5 +9,7 @@ public:
     explicit CPUPaddle() = default;
     ~CPUPaddle() = default;
     
+    void prepare();
+    
     void update (int ballY);
 };

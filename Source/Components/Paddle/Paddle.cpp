@@ -1,5 +1,12 @@
 #include "Paddle.h"
 
+void Paddle::prepare()
+{
+    setSize (25, 120);
+    setSpeed (6);
+    setPosition (10, GetScreenHeight()/2 - getHeight()/2);
+}
+
 void Paddle::draw()
 {
     DrawRectangle (properties.x, properties.y, properties.width, properties.height, WHITE);
@@ -46,6 +53,11 @@ float Paddle::getWidth()
 float Paddle::getHeight()
 {
     return properties.height;
+}
+
+float Paddle::getX()
+{
+    return properties.x;
 }
 
 float Paddle::getY()

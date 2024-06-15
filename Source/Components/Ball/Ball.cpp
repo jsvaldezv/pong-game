@@ -1,5 +1,12 @@
 #include "Ball.h"
 
+void Ball::prepare()
+{
+    setRadius (20);
+    setPosition (GetScreenWidth()/2, GetScreenHeight()/2);
+    setSpeed (7, 7);
+}
+
 void Ball::draw()
 {
     DrawCircle (properties.x, properties.y, properties.radius, WHITE);
@@ -28,13 +35,28 @@ void Ball::setSpeed (int inSpeedX, int inSpeedY)
     properties.speedY = inSpeedY;
 }
 
+void Ball::setSpeedCollision()
+{
+    properties.speedX *= -1;
+}
+
 void Ball::setPosition (float inX, float inY)
 {
     properties.x = inX;
     properties.y = inY;
 }
 
+float Ball::getX()
+{
+    return properties.x;
+}
+
 float Ball::getY()
 {
     return properties.y;
+}
+
+float Ball::getRadius()
+{
+    return properties.radius;
 }

@@ -11,39 +11,60 @@ Ball ball;
 Paddle player;
 CPUPaddle cpu;
 
+void checkForCollisions()
+{
+    // Check for collisions
+    if (CheckCollisionCircleRec (Vector2 { ball.getX(), ball.getY() },
+                                 ball.getRadius(),
+                                 Rectangle { player.getX(), player.getY(), player.getWidth(), player.getHeight() }))
+    {
+        ball.setSpeedCollision();
+    }
+    
+    if (CheckCollisionCircleRec (Vector2 { ball.getX(), ball.getY() },
+                                 ball.getRadius(),
+                                 Rectangle { cpu.getX(), cpu.getY(), cpu.getWidth(), cpu.getHeight() }))
+    {
+        ball.setSpeedCollision();
+    }
+}
+
+void prepare()
+{
+    InitWindow (WIDTH, HEIGHT, "Pong Game!");
+    SetTargetFPS (60);
+
+    ball.prepare();
+    player.prepare();
+    cpu.prepare();
+}
+
+void draw()
+{
+    ball.update();
+    player.update();
+    cpu.update (ball.getY());
+    
+    ClearBackground (BLACK);
+    DrawLine (WIDTH/2, 0, WIDTH/2, HEIGHT, WHITE);
+    
+    ball.draw();
+    cpu.draw();
+    player.draw();
+}
+
 int main()
 {
     std::cout << "Starting Pong Game!...\n";
     
-    InitWindow (WIDTH, HEIGHT, "Pong Game!");
-    SetTargetFPS (60);
-    
-    ball.setRadius (20);
-    ball.setPosition (WIDTH/2, HEIGHT/2);
-    ball.setSpeed (7, 7);
-    
-    player.setSize (25, 120);
-    player.setPosition (WIDTH - player.getWidth() - 10, HEIGHT/2 - player.getHeight()/2);
-    player.setSpeed (6);
-    
-    cpu.setSize (25, 120);
-    cpu.setPosition (10, HEIGHT/2 - player.getHeight()/2);
-    cpu.setSpeed (6);
+    prepare();
     
     while (!WindowShouldClose())
     {
         BeginDrawing();
-                
-        ball.update();
-        player.update();
-        cpu.update (ball.getY());
-        
-        ClearBackground (BLACK);
-        DrawLine (WIDTH/2, 0, WIDTH/2, HEIGHT, WHITE);
-        
-        ball.draw();
-        cpu.draw();
-        player.draw();
+    
+        checkForCollisions();
+        draw();
         
         EndDrawing();
     }
