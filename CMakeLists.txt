@@ -8,7 +8,7 @@ message(STATUS "Project Version: ${PROJECT_VERSION}")
 # ======================================= Project Configuration ======================================= #
 project(${PROJECT_NAME}
         VERSION ${PROJECT_VERSION}
-        DESCRIPTION "C++ Project Template"
+        DESCRIPTION "Pong game with C++ and Raylib"
         LANGUAGES CXX)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
