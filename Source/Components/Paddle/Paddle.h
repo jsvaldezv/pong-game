@@ -29,9 +29,19 @@ public:
     
     void setSpeed (int inSpeed);
     
+    void setY (float inY);
+    
     float getWidth();
     
     float getHeight();
+    
+    float getY();
+    
+    float getSpeed();
+    
+protected:
+    
+    void limitMovement();
     
 private:
     

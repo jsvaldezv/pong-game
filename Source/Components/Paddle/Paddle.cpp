@@ -13,11 +13,7 @@ void Paddle::update()
     if (IsKeyDown(KEY_DOWN))
         properties.y = properties.y + properties.speed;
     
-    if ((properties.y + properties.height) >= GetScreenHeight())
-        properties.y = GetScreenHeight() - properties.height;
-    
-    if (properties.y <= 0)
-        properties.y = 0;
+    limitMovement();
 }
 
 void Paddle::setSize (float inWidth, float inHeight)
@@ -37,6 +33,11 @@ void Paddle::setSpeed (int inSpeed)
     properties.speed = inSpeed;
 }
 
+void Paddle::setY (float inY)
+{
+    properties.y = inY;
+}
+
 float Paddle::getWidth()
 {
     return properties.width;
@@ -45,4 +46,23 @@ float Paddle::getWidth()
 float Paddle::getHeight()
 {
     return properties.height;
+}
+
+float Paddle::getY()
+{
+    return properties.y;
+}
+
+float Paddle::getSpeed()
+{
+    return properties.speed;
+}
+
+void Paddle::limitMovement()
+{
+    if ((properties.y + properties.height) >= GetScreenHeight())
+        properties.y = GetScreenHeight() - properties.height;
+    
+    if (properties.y <= 0)
+        properties.y = 0;
 }

@@ -29,6 +29,8 @@ public:
     
     void setPosition (float inX, float inY);
     
+    float getY();
+    
 private:
     
     Properties properties;

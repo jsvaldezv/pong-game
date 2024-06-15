@@ -33,3 +33,8 @@ void Ball::setPosition (float inX, float inY)
     properties.x = inX;
     properties.y = inY;
 }
+
+float Ball::getY()
+{
+    return properties.y;
+}
