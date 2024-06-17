@@ -2,7 +2,7 @@
 
 Pong Game built with C++ and Raylib
 
-https://github.com/jsvaldezv/pong-game/assets/47612276/478cb709-0b37-4c09-8673-660f851e71c5
+https://github.com/jsvaldezv/pong-game/assets/47612276/19579ca4-15d4-489f-94fb-93543ee2fc2a
 
 ## Pre-requisites
 
