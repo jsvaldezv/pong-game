@@ -23,7 +23,7 @@ void MainComponent::prepare()
 
 void MainComponent::process()
 {
-    while (! WindowShouldClose())
+    while (!WindowShouldClose())
     {
         BeginDrawing();
 
@@ -61,15 +61,15 @@ void MainComponent::checkForCollisions()
 {
     // Check for collisions
     if (CheckCollisionCircleRec (Vector2 { ball.getX(), ball.getY() },
-                                 ball.getRadius(),
-                                 Rectangle { player.getX(), player.getY(), player.getWidth(), player.getHeight() }))
+            ball.getRadius(),
+            Rectangle { player.getX(), player.getY(), player.getWidth(), player.getHeight() }))
     {
         ball.setSpeedCollision();
     }
 
     if (CheckCollisionCircleRec (Vector2 { ball.getX(), ball.getY() },
-                                 ball.getRadius(),
-                                 Rectangle { cpu.getX(), cpu.getY(), cpu.getWidth(), cpu.getHeight() }))
+            ball.getRadius(),
+            Rectangle { cpu.getX(), cpu.getY(), cpu.getWidth(), cpu.getHeight() }))
     {
         ball.setSpeedCollision();
     }
