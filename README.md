@@ -2,6 +2,8 @@
 
 Pong Game built with C++ and Raylib
 
+<img width="1285" alt="Screenshot 2024-06-16 at 9 07 38 p m" src="https://github.com/jsvaldezv/pong-game/assets/47612276/46186ba6-5eb2-4a52-9c29-bb7c01a3500a">
+
 ## Pre-requisites
 
 ### CMake
