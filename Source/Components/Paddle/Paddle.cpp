@@ -4,7 +4,7 @@ void Paddle::prepare()
 {
     setSize (25, 120);
     setSpeed (6);
-    setPosition (10, GetScreenHeight()/2 - getHeight()/2);
+    setPosition (10, GetScreenHeight() / 2 - getHeight() / 2);
 }
 
 void Paddle::draw()
@@ -14,12 +14,12 @@ void Paddle::draw()
 
 void Paddle::update()
 {
-    if (IsKeyDown(KEY_UP))
+    if (IsKeyDown (KEY_UP))
         properties.y = properties.y - properties.speed;
-    
-    if (IsKeyDown(KEY_DOWN))
+
+    if (IsKeyDown (KEY_DOWN))
         properties.y = properties.y + properties.speed;
-    
+
     limitMovement();
 }
 
@@ -74,7 +74,7 @@ void Paddle::limitMovement()
 {
     if ((properties.y + properties.height) >= GetScreenHeight())
         properties.y = GetScreenHeight() - properties.height;
-    
+
     if (properties.y <= 0)
         properties.y = 0;
 }

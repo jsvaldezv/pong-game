@@ -2,13 +2,12 @@
 
 Ball::Ball (int& ps, int& cpus) : PlayerScore (ps), CPUScore (cpus)
 {
-    
 }
 
 void Ball::prepare()
 {
     setRadius (20);
-    setPosition (GetScreenWidth()/2, GetScreenHeight()/2);
+    setPosition (GetScreenWidth() / 2, GetScreenHeight() / 2);
     setSpeed (7, 7);
 }
 
@@ -21,16 +20,16 @@ void Ball::update()
 {
     properties.x += properties.speedX;
     properties.y += properties.speedY;
-    
+
     if ((properties.y + properties.radius) >= GetScreenHeight() || (properties.y - properties.radius <= 0))
         properties.speedY *= -1;
-    
+
     if ((properties.x + properties.radius) >= GetScreenWidth())
     {
         CPUScore++;
         resetBall();
     }
-    
+
     if (properties.x - properties.radius <= 0)
     {
         PlayerScore++;
@@ -40,12 +39,12 @@ void Ball::update()
 
 void Ball::resetBall()
 {
-    properties.x = GetScreenWidth()/2;
-    properties.y = GetScreenHeight()/2;
-    
+    properties.x = GetScreenWidth() / 2;
+    properties.y = GetScreenHeight() / 2;
+
     int SpeedChoices[2] = { -1, 1 };
-    properties.speedX *= SpeedChoices[GetRandomValue(0, 1)];
-    properties.speedY *= SpeedChoices[GetRandomValue(0, 1)];
+    properties.speedX *= SpeedChoices[GetRandomValue (0, 1)];
+    properties.speedY *= SpeedChoices[GetRandomValue (0, 1)];
 }
 
 void Ball::setRadius (int inRadius)

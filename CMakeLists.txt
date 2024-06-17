@@ -43,10 +43,6 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "" FILES ${SOURCE_FILES})
 # Add pre release debug flag
 target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<CONFIG:PreRelease>:PRE_RELEASE=1>)
 
-# ========================================= Formatting ========================================== #
-#include(Formatter)
-#add_clang_format_target(format-code ${PROJECT_SOURCE_DIR})
-
 # ========================================= Libraries =========================================== #
 # Checks if OSX and links appropriate frameworks (only required on MacOS)
 if (APPLE)
