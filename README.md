@@ -1,8 +1,18 @@
-# Pong Game
-
-Pong Game built with C++ and Raylib
+# Pong Game Clone
 
 https://github.com/jsvaldezv/pong-game/assets/47612276/19579ca4-15d4-489f-94fb-93543ee2fc2a
+
+This is a minimalist yet fully functional clone of the classic Pong game, developed in C++ using raylib for graphics and real-time input. The build system is handled with CMake, making it easy to compile and run across different platforms.
+
+Main features:
+
+- Classic Pong mechanics (player vs AI)
+- Real-time paddle and ball movement using raylib’s rendering system
+- Basic collision detection and scoring system
+- Simple and clean C++ structure for game logic
+- Cross-platform compatibility through CMake
+
+This project offers a quick and accessible introduction to 2D game development, real-time rendering, and C++ game architecture using modern tools.
 
 ## Pre-requisites
 
